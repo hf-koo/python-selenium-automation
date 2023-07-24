@@ -7,8 +7,8 @@ def browser_init(context):
     """
     :param context: Behave context
     """
-    driver_path = ChromeDriverManager().install()
-    service = Service(driver_path)
+    service = Service(executable_path='/Users/ahdoy/Desktop/QA/python-selenium-automation/Google Chrome for Testing.app')
+
     context.driver = webdriver.Chrome(service=service)
 
     context.driver.maximize_window()
