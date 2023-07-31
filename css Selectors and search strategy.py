@@ -8,15 +8,15 @@
 
 ## your name
 # by CSS
-## $$(".a-form-label[for='ap_customer_name']")
+## $$("#ap_customer_name")
 
 ## email
 # by CSS
-## $$(".a-form-label[for='ap_email']")
+## $$("#ap_email")
 
 ## password
 # by CSS
-## $$(".a-form-label[for='ap_password']")
+## $$("#ap_password")
 
 ## passwords must be at least 6 characters
 # by CSS
@@ -24,7 +24,7 @@
 
 ## re-enter password
 # by CSS
-## $$(".a-form-label[for='ap_password_check']")
+## $$("#ap_password_check")
 
 ## condition of use
 # by CSS
