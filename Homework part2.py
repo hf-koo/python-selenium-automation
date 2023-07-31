@@ -18,14 +18,14 @@ driver.find_element(By.ID, "nav-link-accountList").click()
 
 sleep(3)
 
-text = driver.find_element(By.XPATH, "//i[@class='a-icon a-icon-logo']").text
-print(text)
+another_text = driver.find_element(By.XPATH, "//i[@aria-label='Amazon']").text
+print(another_text)
 
-sleep(2)
+sleep(3)
 
-header = driver.find_element(By.XPATH, "//h1[@class='a-spacing-small']").text
-print(header)
+assert "Sign in" in driver.find_element(By.XPATH, "//h1[@class='a-spacing-small']").text
 
-
+# header = driver.find_element(By.XPATH, "//h1[@class='a-spacing-small']").text
+# print(header)
 
 print('Test Passed')
