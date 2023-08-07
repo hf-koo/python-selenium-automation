@@ -20,7 +20,7 @@
 
 ## passwords must be at least 6 characters
 # by CSS
-## $$(".a-box-inner .a-alert-content") -- this one I can't find direct one
+## $$(".auth-inlined-information-message .a-alert-content")
 
 ## re-enter password
 # by CSS
