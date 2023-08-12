@@ -3,7 +3,7 @@ from behave import given, when, then
 
 Best_Sellers = (By.CSS_SELECTOR, 'a[href*="/gp/bestsellers/?ref_=nav_cs_bestsellers"]')
 Customer_Service = (By.CSS_SELECTOR, 'a[href*="/gp/help/customer/display.html?nodeId=508510&ref_=nav_cs_customerservice"]')
-Header_Link = (By.CSS_SELECTOR, '._p13n-zg-nav-tab-all_style_zg-tabs-li-div__1YdPR')
+Header_Link = (By.CSS_SELECTOR, '#zg_header a')
 Issue_Card = (By.CSS_SELECTOR, '.issue-card-wrapper')
 @given("Open Amazon page")
 def open_amazon(context):
@@ -16,12 +16,12 @@ def click_on_shopping_cart_icon(context):
 
 
 @when('Click on best sellers')
-def click_on_best_sellers(context):
+def best_sellers(context):
     context.driver.find_element(*Best_Sellers).click()
 
 
 @when('Click on customer service')
-def click_on_customer_services(context):
+def customer_services(context):
     context.driver.find_element(*Customer_Service).click()
 
 

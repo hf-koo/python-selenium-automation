@@ -9,7 +9,7 @@ Feature: Test for sign in
   Scenario:  Verify header has 5 links
     Given Open Amazon page
     When Click on best Sellers
-    Then Verify header has 4 links
+    Then Verify header has 5 links
 
   Scenario:  Verify UI elements on customer page
     Given Open Amazon page
