@@ -1,10 +1,13 @@
 from selenium.webdriver.common.by import By
 from behave import given, when, then
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 Best_Sellers = (By.CSS_SELECTOR, 'a[href*="/gp/bestsellers/?ref_=nav_cs_bestsellers"]')
 Customer_Service = (By.CSS_SELECTOR, 'a[href*="/gp/help/customer/display.html?nodeId=508510&ref_=nav_cs_customerservice"]')
 Header_Link = (By.CSS_SELECTOR, '#zg_header a')
 Issue_Card = (By.CSS_SELECTOR, '.issue-card-wrapper')
+Nav_Orders = (By.ID, 'nav-orders')
 @given("Open Amazon page")
 def open_amazon(context):
     context.driver.get('https://www.amazon.com/')
@@ -12,7 +15,10 @@ def open_amazon(context):
 
 @when('Click on orders')
 def click_on_shopping_cart_icon(context):
-    context.driver.find_element(By.ID, 'nav-orders').click()
+    context.driver.wait.until(
+        EC.element_to_be_clickable(Nav_Orders),
+        message='Nav Orders not clickable'
+    ).click()
 
 
 @when('Click on best sellers')
