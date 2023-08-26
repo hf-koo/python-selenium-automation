@@ -3,8 +3,8 @@ from behave import given, when, then
 
 
 
-# Header_Link = (By.CSS_SELECTOR, '#zg_header a')
-# Issue_Card = (By.CSS_SELECTOR, '.issue-card-wrapper')
+
+
 
 
 @given("Open Amazon page")
@@ -35,14 +35,16 @@ def verify_sign_in_result(context, expected_result):
 #     assert expect_result in actual_result, f'Error, expected {expect_result} did not match actual {actual_result}'
     context.app.sign_in_page.sign_in_result(expected_result)
 
-# @then('Verify header has {expected_amount}links')
-# def verify_un_order_list(context, expected_amount):
-#     expected_amount = int(expected_amount)
-#     links = context.driver.find_elements(*Header_Link)
-#     assert len(links) == expected_amount, f'Expected {expected_amount}links but got {len(links)}'
+@then('Verify header has {expected_amount}links')
+def verify_headers_link(context, expected_amount):
+    # expected_amount = int(expected_amount)
+    # links = context.driver.find_elements(*Header_Link)
+    # assert len(links) == expected_amount, f'Expected {expected_amount}links but got {len(links)}'
+    context.app.best_sellers.verify_headers_links(expected_amount)
 
 
-# @then('Verify issue card has {expected_amount}')
-# def verify_issue_card(context, expected_amount):
-#     links = context.driver.find_elements(*Issue_Card)
-#     assert len(links) > 1, f'Expected at least 11 links, but got {len(links)}'
+@then('Verify issue card has {expected_amount}')
+def verify_issue_card(context, expected_amount):
+    #links = context.driver.find_elements(*Issue_Card)
+    #assert len(links) > 1, f'Expected at least 11 links, but got {len(links)}'
+    context.app.customer_services.verify_issue_cards(expected_amount)

@@ -7,8 +7,7 @@ class Header(Page):
     SEARCH_BTN = (By.ID, 'nav-search-submit-button')
     NAV_ORDERS = (By.ID, 'nav-orders')
     BEST_SELLERS = (By.CSS_SELECTOR, 'a[href*="/gp/bestsellers/?ref_=nav_cs_bestsellers"]')
-    CUSTOMER_SERVICES = (
-    By.CSS_SELECTOR, 'a[href*="/gp/help/customer/display.html?nodeId=508510&ref_=nav_cs_customerservice"]')
+    CUSTOMER_SERVICES = (By.CSS_SELECTOR, 'a[href*="/gp/help/customer/display.html?nodeId=508510&ref_=nav_cs_customerservice"]')
 
 
     def search_product(self, product):
