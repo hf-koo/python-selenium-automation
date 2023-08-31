@@ -15,3 +15,9 @@ Feature: Test for sign in
     Given Open Amazon page
     When Click on customer service
     Then Verify issue card has 11
+
+
+  Scenario: Verify that a user can click on cart icon
+    Given Open Amazon page
+    When Click on shopping cart icon
+    Then Verify cart result is Your Amazon Cart is empty

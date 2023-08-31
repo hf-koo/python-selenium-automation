@@ -2,6 +2,10 @@ from selenium.webdriver.common.by import By
 from pages.base_page import Page
 
 
+from selenium.webdriver.common.by import By
+from pages.base_page import Page
+
+
 class Header(Page):
     SEARCH_FIELD = (By.ID, 'twotabsearchtextbox')
     SEARCH_BTN = (By.ID, 'nav-search-submit-button')
@@ -15,7 +19,7 @@ class Header(Page):
         self.click(*self.SEARCH_BTN)
 
 
-    def click_sigin_popup(self, *locator):
+    def click_signin_popup(self, *locator):
         self.click(*self.NAV_ORDERS)
 
 
@@ -25,3 +29,4 @@ class Header(Page):
 
     def search_customer_services(self):
         self.click(*self.CUSTOMER_SERVICES)
+

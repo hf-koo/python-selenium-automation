@@ -2,11 +2,12 @@ from selenium.webdriver.common.by import By
 from pages.base_page import Page
 
 class SignInPage(Page):
-    SEARCH_RESULT = (By.CSS_SELECTOR, '.a-box-inner .a-spacing-small')
-    expected_text = 'Sign in'
+    SIGNIN_HEADER = (By.XPATH, "//h1[@class='a-spacing-small']")
+    # EMAIL_INPUT = (By.ID, 'ap_email')
 
-    def sign_in_result(self, expected_text):
-        actual_text = self.find_element(*self.SEARCH_RESULT).text
+    def verify_signin_opened(self, expected_result):
+        self.verify_text(expected_result, *self.SIGNIN_HEADER)
 
-        assert actual_text == expected_text, \
-            f'Error, expected {expected_text} did not match actual {actual_text}'
+        # Verify email field present
+        # self.driver.find_element(*self.EMAIL_INPUT)
+        # self.verify_partial_url('ap/signin')
