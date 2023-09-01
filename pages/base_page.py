@@ -31,4 +31,12 @@ class Page:
         self.wait.until(EC.url_contains(expected_part_of_url))
 
 
+    def verify_texts(self, expected_amount, *locator):
+        actual_amount = self.find_elements(*locator)
+        expected_amount = int(expected_amount)
+        actual_amount = len(actual_amount)
+        # links = self.find_elements(*self.HEADER_LINK)
+        assert expected_amount == actual_amount, \
+            f'Expected {expected_amount}links but got {actual_amount}'
+
 
