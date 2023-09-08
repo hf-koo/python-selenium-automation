@@ -7,6 +7,10 @@ def open_amazon(context):
     # context.driver.get('https://www.amazon.com/')
     context.app.main_page.open_main()
 
+@given("Open Amazon T&C page")
+def open_amazon_t_c(context):
+    context.app.t_c_page.open_t_c()
+
 
 @when('Click on orders')
 def click_on_shopping_cart_icon(context):
@@ -29,6 +33,17 @@ def customer_services(context):
 def click_on_shopping_cart_icon(context):
     context.app.shopping_cart.click_cart()
 
+@when('Store original windows')
+def store_org_win(context):
+    context.original_window = context.app.t_c_page.store_original_window()
+
+@when('Click on Amazon Privacy Notice')
+def open_privacy_notice(context):
+    context.app.t_c_page.open_privacy_notice()
+
+@when('Switch to the newly opened window')
+def switch_to_new_window(context):
+    context.app.t_c_page.switch_to_newer_window()
 
 
 @then('Verify sign in text is {expected_result}')
