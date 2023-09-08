@@ -1,10 +1,10 @@
 from selenium.webdriver.common.by import By
 from behave import given, when, then
+from selenium.webdriver.support.wait import WebDriverWait
 
 
 @given("Open Amazon page")
 def open_amazon(context):
-    # context.driver.get('https://www.amazon.com/')
     context.app.main_page.open_main()
 
 @given("Open Amazon T&C page")
@@ -65,3 +65,12 @@ def verify_issue_card(context, expected_amount):
 @then('Verify cart result is {result}')
 def verify_cart_result(context, result):
     context.app.shopping_cart.verify_empty_cart(result)
+
+@then('Verify Amazon Privacy Notice page is opened')
+def verify_amazon_privacy_notice(context):
+    context.app.t_c_page.verify_privacy_open()
+
+@then('User can close new window and switch back to original')
+def user_can_close_new_window(context):
+    context.app.t_c_page.user_can_close_new_window()
+    context.app.t_c_page.switch_to_window(context.original_window)

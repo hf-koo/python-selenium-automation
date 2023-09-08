@@ -1,9 +1,11 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+
 class Page:
     def __init__(self, driver):
         self.driver = driver
+        self.wait = WebDriverWait(self.driver, 10)
 
     def click(self, *locator):
         self.driver.find_element(*locator).click()
@@ -30,7 +32,6 @@ class Page:
 
     def verify_partial_url(self, expected_part_of_url):
         self.wait.until(EC.url_contains(expected_part_of_url))
-
 
     def verify_texts(self, expected_amount, *locator):
         actual_amount = self.find_elements(*locator)
@@ -61,5 +62,3 @@ class Page:
 
     def close_page(self):
         self.driver.close()
-
-
