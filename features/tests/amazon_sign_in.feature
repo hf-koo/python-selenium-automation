@@ -29,4 +29,5 @@ Feature: Test for sign in
    And Click on Amazon Privacy Notice
    And Switch to the newly opened window
    Then Verify Amazon Privacy Notice page is opened
-   And User can close new window and switch back to original
+   And User can close new window
+   And Switch back to original

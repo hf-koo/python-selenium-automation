@@ -70,7 +70,10 @@ def verify_cart_result(context, result):
 def verify_amazon_privacy_notice(context):
     context.app.t_c_page.verify_privacy_open()
 
-@then('User can close new window and switch back to original')
+@then('User can close new window')
 def user_can_close_new_window(context):
     context.app.t_c_page.user_can_close_new_window()
-    context.app.t_c_page.switch_to_window(context.original_window)
+
+@then('Switch back to original')
+def user_switch_back_original(context):
+    context.app.base_page.switch_to_window(context.original_window)

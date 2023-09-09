@@ -26,8 +26,6 @@ class TCPage(Page):
     def user_can_close_new_window(self):
         self.close_page()
 
-    # def user_can_return_original_window(self):
-    #     self.switch_to_window(self, *self.window_id)
 
 
 

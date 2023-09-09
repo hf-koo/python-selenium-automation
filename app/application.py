@@ -5,9 +5,11 @@ from pages.best_sellers_links import BestSellers
 from pages.customer_services_headers import CustomerServices
 from pages.shopping_cart import ShoppingCart
 from pages.t_c_page import TCPage
+from pages.base_page import Page
 
 class Application:
     def __init__(self, driver):
+        self.base_page = Page(driver)
         self.main_page = MainPage(driver)
         self.header = Header(driver)
         self.shopping_cart = ShoppingCart(driver)
