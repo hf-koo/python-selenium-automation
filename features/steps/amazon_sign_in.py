@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 from behave import given, when, then
-from selenium.webdriver.support.wait import WebDriverWait
+from time import sleep
 
 
 @given("Open Amazon page")
@@ -45,6 +45,20 @@ def open_privacy_notice(context):
 def switch_to_new_window(context):
     context.app.t_c_page.switch_to_newer_window()
 
+@when('Hover over language options')
+def hover_lang(context):
+    context.app.header.hover_lang()
+
+@when('Select Cell phones & Accessories')
+def select_dept(context):
+    context.app.header.select_dept()
+
+
+@when('Search for {text}')
+def word_search(context, text):
+    context.app.header.search_iphone()
+
+
 
 @then('Verify sign in text is {expected_result}')
 def verify_sign_in_result(context, expected_result):
@@ -77,3 +91,13 @@ def user_can_close_new_window(context):
 @then('Switch back to original')
 def user_switch_back_original(context):
     context.app.base_page.switch_to_window(context.original_window)
+
+@then('Verify Spanish option present')
+def verify_spanish_lang(context):
+    context.app.header.verify_spanish_lang()
+
+
+@then('Verify Cell phones department selected')
+def verify_dept_selected(context):
+    context.app.header.verify_dept_selected()
+    sleep(4)
