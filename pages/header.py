@@ -14,7 +14,7 @@ class Header(Page):
     LANG_SELECTION = (By.CSS_SELECTOR, ".icp-nav-flag-us")
     SPANISH_LANG = (By.CSS_SELECTOR, '#nav-flyout-icp [href="#switch-lang=es_US"]')
     DEPT_SELECTION = (By.ID, 'searchDropdownBox')
-    SUBHEADER_DEPT = (By.CSS_SELECTOR, "#nav-subnav[data-category='wireless-prepaid']")
+    SUBHEADER_DEPT = (By.XPATH, "//option[@selected='selected' and @value='search-alias=mobile']")
 
     def search_product(self, product):
         self.input_text(product, *self.SEARCH_FIELD)
@@ -48,8 +48,9 @@ class Header(Page):
         select = Select(dept_selection)
         select.select_by_value('search-alias=mobile')
 
-    def search_iphone(self, text, locator):
+    def search_iphone(self, text):
         self.input_text(text, *self.SEARCH_FIELD)
+        self.click(*self.SEARCH_BTN)
 
 
     def verify_dept_selected(self):

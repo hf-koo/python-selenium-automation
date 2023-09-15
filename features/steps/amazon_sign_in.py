@@ -56,7 +56,7 @@ def select_dept(context):
 
 @when('Search for {text}')
 def word_search(context, text):
-    context.app.header.search_iphone()
+    context.app.header.search_iphone(text)
 
 
 
