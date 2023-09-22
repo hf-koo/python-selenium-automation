@@ -1,6 +1,7 @@
 # Created by ahdoy at 7/31/23
 Feature: Test for sign in
 
+  @smoke
   Scenario:  Verify that a user can click on orders
     Given Open Amazon page
     When Click on orders
@@ -16,7 +17,7 @@ Feature: Test for sign in
     When Click on customer service
     Then Verify issue card has 11
 
-
+  @smoke
   Scenario: Verify that a user can click on cart icon
     Given Open Amazon page
     When Click on shopping cart icon
